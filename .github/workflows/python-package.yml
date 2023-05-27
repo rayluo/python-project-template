@@ -18,11 +18,11 @@ jobs:
       TRAVIS: true
 
     # Derived from https://docs.github.com/en/actions/guides/building-and-testing-python#starting-with-the-python-workflow-template
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # The latest 22.04 no longer supports Python 3.5, 3.6
     strategy:
       matrix:
         # See also https://endoflife.date/python
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9, "3.10", 3.11]
 
     steps:
     - uses: actions/checkout@v2
